@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keamanan SOA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f9ff;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #0055a4;
+            padding: 20px 70px;
+            color: white;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 30px 70px;
+        }
+        .intro {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            color: #0055a4;
+            font-weight: 600;
+            text-align: center;
+        }
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            flex-grow: 1;
+        }
+        .security-card {
+            background-color: rgba(79, 195, 247, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.2s;
+        }
+        .security-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 85, 164, 0.1);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .card-icon {
+            background-color: rgba(0, 85, 164, 0.1);
+            color: #0055a4;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        .card-icon i {
+            font-size: 28px;
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0055a4;
+        }
+        .security-list {
+            list-style: none;
+            margin-top: 5px;
+            flex-grow: 1;
+        }
+        .security-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .security-item i {
+            color: #4fc3f7;
+            margin-right: 8px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .highlight {
+            color: #0055a4;
+            font-weight: 600;
+        }
+        .image-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 180px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 85, 164, 0.15);
+        }
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+        .nav-button {
+            background-color: #0055a4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 85, 164, 0.3);
+        }
+        .nav-button:hover {
+            background-color: #003d7a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 85, 164, 0.4);
+        }
+        .nav-button i {
+            font-size: 20px;
+        }
+        .slide-number {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: rgba(0, 85, 164, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1 class="title">Mengamankan Arsitektur Berorientasi Layanan</h1>
+        </div>
+        <div class="content">
+            <p class="intro">Keamanan adalah aspek krusial dalam lingkungan SOA yang terdistribusi</p>
+            
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">gpp_bad</i>
+                        </div>
+                        <h3 class="card-title">Ancaman SOA</h3>
+                    </div>
+                    <ul class="security-list">
+                        <li class="security-item">
+                            <i class="material-icons">no_accounts</i>
+                            <span><span class="highlight">Unauthorized Access</span></span>
+                        </li>
+                        <li class="security-item">
+                            <i class="material-icons">hearing</i>
+                            <span><span class="highlight">Eavesdropping</span></span>
+                        </li>
+                        <li class="security-item">
+                            <i class="material-icons">edit_off</i>
+                            <span><span class="highlight">Tampering</span></span>
+                        </li>
+                        <li class="security-item">
+                            <i class="material-icons">block</i>
+                            <span><span class="highlight">DoS/DDoS</span></span>
+                        </li>
+                        <li class="security-item">
+                            <i class="material-icons">replay</i>
+                            <span><span class="highlight">Replay Attacks</span></span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="security-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">security</i>
+                        </div>
+                        <h3 class="card-title">Mekanisme Keamanan</h3>
+                    </div>
+                    <ul class="security-list">
+                        <li class="security-item">
+                            <i class="material-icons">how_to_reg</i>
+                            <span><span class="highlight">Autentikasi</span> - Verifikasi identitas</span>
+                        </li>
+                        <li class="security-item">
+                            <i class="material-icons">admin_panel_settings</i>
+                            <span><span class="highlight">Otorisasi</span> - Kontrol akses</span>
+                        </li>
+                        <li class="security-item">
+                            <i class="material-icons">enhanced_encryption</i>
+                            <span><span class="highlight">Enkripsi</span> - Perlindungan data</span>
+                        </li>
+                        <li class="security-item">
+                            <i class="material-icons">verified</i>
+                            <span><span class="highlight">Integritas Data</span> - Tanda tangan digital</span>
+                        </li>
+                        <li class="security-item">
+                            <i class="material-icons">fact_check</i>
+                            <span><span class="highlight">Audit Logging</span> - Pelacakan aktivitas</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="security-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">library_books</i>
+                        </div>
+                        <h3 class="card-title">Standar Keamanan</h3>
+                    </div>
+                    <ul class="security-list">
+                        <li class="security-item">
+                            <i class="material-icons">shield</i>
+                            <span><span class="highlight">WS-Security</span> - Keamanan pesan SOAP</span>
+                        </li>
+                        <li class="security-item">
+                            <i class="material-icons">verified_user</i>
+                            <span><span class="highlight">WS-Trust</span> - Manajemen token</span>
+                        </li>
+                        <li class="security-item">
+                            <i class="material-icons">lock</i>
+                            <span><span class="highlight">SAML</span> - Federasi identitas</span>
+                        </li>
+                        <li class="security-item">
+                            <i class="material-icons">key</i>
+                            <span><span class="highlight">OAuth 2.0</span> - Otorisasi</span>
+                        </li>
+                        <li class="security-item">
+                            <i class="material-icons">token</i>
+                            <span><span class="highlight">JWT</span> - Token akses</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="image-container">
+                <img src="https://sfile.chatglm.cn/images-ppt/8c4c5052cced.png" alt="Lapisan Keamanan SOA">
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-number">Slide 11 / 15</div>
+    
+    <div class="navigation">
+        <a href="10.html" class="nav-button">
+            <i class="material-icons">arrow_back</i>
+            <span>Previous</span>
+        </a>
+        <a href="12.html" class="nav-button">
+            <span>Next</span>
+            <i class="material-icons">arrow_forward</i>
+        </a>
+    </div>
+</body>
+</html>

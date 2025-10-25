@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service-Oriented Architecture Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #ffffff;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(0, 40, 85, 0.85), rgba(0, 40, 85, 0.85)), 
+                        url('https://sfile.chatglm.cn/images-ppt/1e5a80903236.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            padding: 0 70px;
+            text-align: center;
+        }
+        .title {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+        .subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: #e0f2ff;
+            max-width: 80%;
+        }
+        .accent-line {
+            width: 100px;
+            height: 4px;
+            background-color: #4fc3f7;
+            margin: 30px 0;
+        }
+        .workshop-badge {
+            background-color: rgba(79, 195, 247, 0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .workshop-badge i {
+            margin-right: 8px;
+            color: #4fc3f7;
+        }
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+        .nav-button {
+            background-color: #0055a4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 85, 164, 0.3);
+        }
+        .nav-button:hover {
+            background-color: #003d7a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 85, 164, 0.4);
+        }
+        .nav-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        .nav-button i {
+            font-size: 20px;
+        }
+        .slide-number {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: rgba(0, 85, 164, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="content">
+            <h1 class="title">Membangun Landasan Kokoh</h1>
+            <div class="accent-line"></div>
+            <h2 class="subtitle">Workshop Mendalam tentang Service-Oriented Architecture (SOA)</h2>
+            <div class="workshop-badge">
+                <i class="material-icons">architecture</i>
+                Paradigma Arsitektur Perangkat Lunak Modern
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-number">Slide 1 / 15</div>
+    
+    <div class="navigation">
+        <a href="2.html" class="nav-button">
+            <span>Next</span>
+            <i class="material-icons">arrow_forward</i>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desain Layanan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f9ff;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #0055a4;
+            padding: 20px 70px;
+            color: white;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 30px 70px;
+        }
+        .intro {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            color: #0055a4;
+            font-weight: 600;
+        }
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            flex-grow: 1;
+        }
+        .principle-card {
+            background-color: rgba(79, 195, 247, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.2s;
+        }
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 85, 164, 0.1);
+        }
+        .principle-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .principle-icon {
+            background-color: rgba(0, 85, 164, 0.1);
+            color: #0055a4;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        .principle-icon i {
+            font-size: 28px;
+        }
+        .principle-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0055a4;
+        }
+        .principle-desc {
+            font-size: 18px;
+            line-height: 1.3;
+            flex-grow: 1;
+        }
+        .highlight {
+            color: #0055a4;
+            font-weight: 600;
+        }
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+        .nav-button {
+            background-color: #0055a4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 85, 164, 0.3);
+        }
+        .nav-button:hover {
+            background-color: #003d7a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 85, 164, 0.4);
+        }
+        .nav-button i {
+            font-size: 20px;
+        }
+        .slide-number {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: rgba(0, 85, 164, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1 class="title">Merancang Layanan yang Efektif</h1>
+        </div>
+        <div class="content">
+            <p class="intro">Prinsip-prinsip desain yang baik sangat penting untuk memastikan layanan SOA yang sukses</p>
+            
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="material-icons">grain</i>
+                        </div>
+                        <h3 class="principle-title">Granularitas</h3>
+                    </div>
+                    <p class="principle-desc">Menemukan keseimbangan antara layanan <span class="highlight">terlalu halus</span> vs <span class="highlight">terlalu kasar</span></p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="material-icons">link_off</i>
+                        </div>
+                        <h3 class="principle-title">Loose Coupling</h3>
+                    </div>
+                    <p class="principle-desc">Minimalkan ketergantungan antar layanan melalui <span class="highlight">antarmuka yang jelas</span></p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="material-icons">repeat</i>
+                        </div>
+                        <h3 class="principle-title">Reusability</h3>
+                    </div>
+                    <p class="principle-desc">Rancang layanan agar dapat digunakan kembali oleh <span class="highlight">berbagai aplikasi</span></p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="material-icons">sync_alt</i>
+                        </div>
+                        <h3 class="principle-title">Interoperability</h3>
+                    </div>
+                    <p class="principle-desc">Layanan dapat berkomunikasi terlepas dari <span class="highlight">platform teknologi</span></p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="material-icons">extension</i>
+                        </div>
+                        <h3 class="principle-title">Composability</h3>
+                    </div>
+                    <p class="principle-desc">Layanan dapat dengan mudah <span class="highlight">dikombinasikan</span> untuk membentuk aplikasi kompleks</p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="material-icons">layers</i>
+                        </div>
+                        <h3 class="principle-title">Stateless</h3>
+                    </div>
+                    <p class="principle-desc">Setiap permintaan berisi <span class="highlight">semua informasi</span> yang diperlukan untuk pemrosesan</p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="material-icons">security</i>
+                        </div>
+                        <h3 class="principle-title">Autonomy</h3>
+                    </div>
+                    <p class="principle-desc">Layanan memiliki kontrol penuh atas <span class="highlight">logika dan sumber daya</span></p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="material-icons">search</i>
+                        </div>
+                        <h3 class="principle-title">Discoverability</h3>
+                    </div>
+                    <p class="principle-desc">Layanan mudah <span class="highlight">ditemukan dan dipahami</span> oleh pengembang</p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="material-icons">view_compact</i>
+                        </div>
+                        <h3 class="principle-title">High Cohesion</h3>
+                    </div>
+                    <p class="principle-desc">Setiap layanan memiliki <span class="highlight">tanggung jawab terfokus</span> yang terdefinisi dengan baik</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-number">Slide 9 / 15</div>
+    
+    <div class="navigation">
+        <a href="8.html" class="nav-button">
+            <i class="material-icons">arrow_back</i>
+            <span>Previous</span>
+        </a>
+        <a href="10.html" class="nav-button">
+            <span>Next</span>
+            <i class="material-icons">arrow_forward</i>
+        </a>
+    </div>
+</body>
+</html>

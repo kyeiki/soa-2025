@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komposisi Layanan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f9ff;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #0055a4;
+            padding: 20px 70px;
+            color: white;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 30px 70px;
+        }
+        .intro {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            color: #0055a4;
+            font-weight: 600;
+            text-align: center;
+        }
+        .comparison-container {
+            display: flex;
+            gap: 30px;
+            flex-grow: 1;
+        }
+        .approach-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .approach-header {
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 85, 164, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .approach-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #0055a4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        .approach-icon i {
+            font-size: 32px;
+            color: white;
+        }
+        .approach-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0055a4;
+        }
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            flex-grow: 1;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            background-color: rgba(79, 195, 247, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .feature-icon {
+            color: #0055a4;
+            margin-right: 10px;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        .feature-text {
+            font-size: 18px;
+            line-height: 1.3;
+        }
+        .highlight {
+            color: #0055a4;
+            font-weight: 600;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 180px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 85, 164, 0.15);
+        }
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+        .nav-button {
+            background-color: #0055a4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 85, 164, 0.3);
+        }
+        .nav-button:hover {
+            background-color: #003d7a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 85, 164, 0.4);
+        }
+        .nav-button i {
+            font-size: 20px;
+        }
+        .slide-number {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: rgba(0, 85, 164, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1 class="title">Mengkomposisikan Layanan: Orkestrasi vs Koreografi</h1>
+        </div>
+        <div class="content">
+            <p class="intro">Dua pola utama untuk mengkomposisikan layanan dalam SOA</p>
+            
+            <div class="comparison-container">
+                <div class="approach-column">
+                    <div class="approach-header">
+                        <div class="approach-icon">
+                            <i class="material-icons">settings_applications</i>
+                        </div>
+                        <h2 class="approach-title">Orkestrasi</h2>
+                    </div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="material-icons feature-icon">center_focus_strong</i>
+                            <p class="feature-text"><span class="highlight">Pendekatan terpusat</span> dengan komponen pengendali</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="material-icons feature-icon">call_split</i>
+                            <p class="feature-text">Orchestrator <span class="highlight">mengontrol alur eksekusi</span> proses</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="material-icons feature-icon">visibility</i>
+                            <p class="feature-text"><span class="highlight">Visibilitas proses</span> yang lebih baik</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="material-icons feature-icon">tune</i>
+                            <p class="feature-text">Lebih mudah <span class="highlight">dimodifikasi</span> dan dipahami</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="material-icons feature-icon">warning</i>
+                            <p class="feature-text">Berpotensi menjadi <span class="highlight">titik kegagalan tunggal</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="approach-column">
+                    <div class="approach-header">
+                        <div class="approach-icon">
+                            <i class="material-icons">device_hub</i>
+                        </div>
+                        <h2 class="approach-title">Koreografi</h2>
+                    </div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="material-icons feature-icon">scatter_plot</i>
+                            <p class="feature-text"><span class="highlight">Pendekatan terdistribusi</span> tanpa pengendali pusat</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="material-icons feature-icon">notifications_active</i>
+                            <p class="feature-text">Layanan berkoordinasi melalui <span class="highlight">pesan/peristiwa</span></p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="material-icons feature-icon">security</i>
+                            <p class="feature-text">Sistem lebih <span class="highlight">tangguh</span> dan longgar-ikatan</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="material-icons feature-icon">trending_up</i>
+                            <p class="feature-text"><span class="highlight">Skalabilitas</span> yang lebih baik</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="material-icons feature-icon">psychology</i>
+                            <p class="feature-text">Lebih sulit <span class="highlight">memvisualisasikan</span> alur proses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-container">
+                <img src="https://sfile.chatglm.cn/images-ppt/90e4eb65b179.jpeg" alt="Orchestration vs Choreography">
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-number">Slide 10 / 15</div>
+    
+    <div class="navigation">
+        <a href="9.html" class="nav-button">
+            <i class="material-icons">arrow_back</i>
+            <span>Previous</span>
+        </a>
+        <a href="11.html" class="nav-button">
+            <span>Next</span>
+            <i class="material-icons">arrow_forward</i>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengujian SOA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f9ff;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #0055a4;
+            padding: 20px 70px;
+            color: white;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 30px 70px;
+        }
+        .intro {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            color: #0055a4;
+            font-weight: 600;
+            text-align: center;
+        }
+        .testing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            flex-grow: 1;
+        }
+        .testing-card {
+            background-color: rgba(79, 195, 247, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.2s;
+        }
+        .testing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 85, 164, 0.1);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .card-icon {
+            background-color: rgba(0, 85, 164, 0.1);
+            color: #0055a4;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        .card-icon i {
+            font-size: 28px;
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0055a4;
+        }
+        .testing-list {
+            list-style: none;
+            margin-top: 5px;
+            flex-grow: 1;
+        }
+        .testing-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .testing-item i {
+            color: #4fc3f7;
+            margin-right: 8px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .highlight {
+            color: #0055a4;
+            font-weight: 600;
+        }
+        .tools-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        .tools-section {
+            flex: 1;
+            background-color: rgba(79, 195, 247, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .tools-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0055a4;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .tools-title i {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tool-badge {
+            background-color: rgba(0, 85, 164, 0.1);
+            color: #0055a4;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        .tool-badge i {
+            font-size: 16px;
+            margin-right: 5px;
+        }
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+        .nav-button {
+            background-color: #0055a4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 85, 164, 0.3);
+        }
+        .nav-button:hover {
+            background-color: #003d7a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 85, 164, 0.4);
+        }
+        .nav-button i {
+            font-size: 20px;
+        }
+        .slide-number {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: rgba(0, 85, 164, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1 class="title">Menguji dan Menjamin Kualitas Layanan SOA</h1>
+        </div>
+        <div class="content">
+            <p class="intro">Strategi pengujian komprehensif untuk memastikan kualitas sistem SOA</p>
+            
+            <div class="testing-grid">
+                <div class="testing-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">layers</i>
+                        </div>
+                        <h3 class="card-title">Strategi Pengujian</h3>
+                    </div>
+                    <ul class="testing-list">
+                        <li class="testing-item">
+                            <i class="material-icons">check_circle</i>
+                            <span><span class="highlight">Unit Testing</span> - Uji layanan secara terisolasi</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">check_circle</i>
+                            <span><span class="highlight">Integrasi</span> - Verifikasi interaksi antar layanan</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">check_circle</i>
+                            <span><span class="highlight">Alur Kerja</span> - Uji proses bisnis end-to-end</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">check_circle</i>
+                            <span><span class="highlight">Sistem</span> - Uji aplikasi SOA terintegrasi</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">check_circle</i>
+                            <span><span class="highlight">Regresi</span> - Pastikan perubahan tidak merusak</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">check_circle</i>
+                            <span><span class="highlight">Performa</span> - Uji respons time dan throughput</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="testing-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">build</i>
+                        </div>
+                        <h3 class="card-title">Alat Bantu Fungsional</h3>
+                    </div>
+                    <ul class="testing-list">
+                        <li class="testing-item">
+                            <i class="material-icons">star</i>
+                            <span><span class="highlight">SoapUI</span> - Pengujian SOAP & REST</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">star</i>
+                            <span><span class="highlight">Postman</span> - Pengujian API RESTful</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">star</i>
+                            <span><span class="highlight">Parasoft SOAtest</span> - Solusi enterprise</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">star</i>
+                            <span><span class="highlight">IBM Rational</span> - Pengujian layanan web</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">star</i>
+                            <span><span class="highlight">JUnit/NUnit</span> - Pengujian unit</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">star</i>
+                            <span><span class="highlight">Mockito/Moq</span> - Objek tiruan</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="testing-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="material-icons">speed</i>
+                        </div>
+                        <h3 class="card-title">Kualitas Layanan (QoS)</h3>
+                    </div>
+                    <ul class="testing-list">
+                        <li class="testing-item">
+                            <i class="material-icons">verified</i>
+                            <span><span class="highlight">Ketersediaan</span> - Persentase waktu operasional</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">verified</i>
+                            <span><span class="highlight">Keandalan</span> - Konsistensi performa</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">verified</i>
+                            <span><span class="highlight">Performa</span> - Respons time & throughput</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">verified</i>
+                            <span><span class="highlight">Skalabilitas</span> - Kemampuan menangani beban</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">verified</i>
+                            <span><span class="highlight">Keamanan</span> - Autentikasi & otorisasi</span>
+                        </li>
+                        <li class="testing-item">
+                            <i class="material-icons">verified</i>
+                            <span><span class="highlight">Monitoring</span> - Pelacakan metrik real-time</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tools-container">
+                <div class="tools-section">
+                    <h3 class="tools-title">
+                        <i class="material-icons">speed</i>
+                        Alat Bantu Performa
+                    </h3>
+                    <div class="tools-list">
+                        <div class="tool-badge">
+                            <i class="material-icons">trending_up</i>
+                            LoadRunner
+                        </div>
+                        <div class="tool-badge">
+                            <i class="material-icons">trending_up</i>
+                            k6
+                        </div>
+                        <div class="tool-badge">
+                            <i class="material-icons">trending_up</i>
+                            Apache JMeter
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tools-section">
+                    <h3 class="tools-title">
+                        <i class="material-icons">auto_graph</i>
+                        Metrik Monitoring
+                    </h3>
+                    <div class="tools-list">
+                        <div class="tool-badge">
+                            <i class="material-icons">analytics</i>
+                            SLA Tracking
+                        </div>
+                        <div class="tool-badge">
+                            <i class="material-icons">analytics</i>
+                            Real-time Alerts
+                        </div>
+                        <div class="tool-badge">
+                            <i class="material-icons">analytics</i>
+                            Capacity Planning
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-number">Slide 12 / 15</div>
+    
+    <div class="navigation">
+        <a href="11.html" class="nav-button">
+            <i class="material-icons">arrow_back</i>
+            <span>Previous</span>
+        </a>
+        <a href="13.html" class="nav-button">
+            <span>Next</span>
+            <i class="material-icons">arrow_forward</i>
+        </a>
+    </div>
+</body>
+</html>
